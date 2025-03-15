@@ -1,0 +1,1 @@
+Formulario para tomar los datos en comun en create y edit 
