@@ -18,7 +18,15 @@ Mostrar las listas de empleados
             <td>{{ $empleado->Nombre}}</td>
             <td>{{ $empleado->Apellido }}</td>
             <td>{{ $empleado->Email }}</td>
-            <td>Editar | Borrar </td>
+            <td>Editar |
+            <form action="{{ url('/empleado/' .$empleado->id ) }}" method="post">
+            @csrf <!--Llave de seguridad-->
+            {{ method_field('DELETE')}} <!--OBservar que arriba dice POST y según el listado de rutas, necesito DELETE para eliminar -->
+            <input type="submit" onclick="return confirm('¿Querés borrar?')" value="Borrar">  
+            
+            </form>
+            
+            </td>
         </tr>
         @endforeach
     </tbody>

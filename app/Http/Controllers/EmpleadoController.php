@@ -66,8 +66,9 @@ class EmpleadoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empleado $empleado)
+    public function destroy($id)
     {
-        //
+        Empleado::destroy($id);
+        return redirect('empleado');
     }
 }
