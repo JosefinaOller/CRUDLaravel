@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empleado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EmpleadoController extends Controller
 {
@@ -59,9 +60,25 @@ class EmpleadoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, $id)
     {
-        //
+        $datosEmpleado = request()->except(['_token','_method']);
+
+        $empleado = Empleado::findOrFail($id);
+
+        if ($request->hasFile('Foto')) {
+            if ($empleado->Foto) {
+              Storage::delete('public/'.$empleado->Foto); //elimino la foto antigua  
+            }
+            $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public'); //guardo la nueva foto
+        }
+        
+        else {
+            $datosEmpleado['Foto'] = $empleado->Foto;
+        }
+        //$empleado=Empleado::findOrFail($id);
+         Empleado::where('id','=',$id)->update($datosEmpleado); //consulto si coinciden los id's.
+        return redirect()->route('empleado.index')->with('mensjae','Empleado actualizado correctamente');
     }
 
     /**

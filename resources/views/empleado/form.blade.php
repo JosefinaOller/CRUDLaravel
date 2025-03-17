@@ -1,14 +1,16 @@
 <label for="Nombre"> Nombre </label>
-<input type="text" name="Nombre" value="{{ $empleado->Nombre }}" id="Nombre">
+<input type="text" name="Nombre" value="{{ isset($empleado) ? $empleado->Nombre : '' }}" id="Nombre">
 <br>
 <label for="Apellido"> Apellido </label>
-<input type="text" name="Apellido" value="{{ $empleado->Apellido }}" id="Apellido">
+<input type="text" name="Apellido" value="{{ isset($empleado) ? $empleado->Apellido : '' }}" id="Apellido">
 <br>
 <label for="Email"> Email </label>
-<input type="text" name="Email" value="{{ $empleado->Email }}" id="Email">
+<input type="text" name="Email" value="{{ isset($empleado) ? $empleado->Email : '' }}" id="Email">
 <br>
 <label for="Foto"> Foto </label>
-{{ $empleado->Foto }}
+@if(isset($empleado) && $empleado->Foto) <!--Controlo que haya empleado y foto-->
+    <img src="{{ asset('storage').'/'.$empleado->Foto}}" width="100" alt="">
+@endif
 <input type="file" name="Foto" value="" id="Foto">
 <br>
 <input type="submit" value='Guardar datos'>
