@@ -50,9 +50,10 @@ class EmpleadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Empleado $empleado)
+    public function edit($id)
     {
-        //
+       $empleado=Empleado::findOrFail($id);
+        return view ('empleado.edit', compact('empleado'));
     }
 
     /**

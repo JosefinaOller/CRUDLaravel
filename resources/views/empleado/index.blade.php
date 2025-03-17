@@ -18,7 +18,13 @@ Mostrar las listas de empleados
             <td>{{ $empleado->Nombre}}</td>
             <td>{{ $empleado->Apellido }}</td>
             <td>{{ $empleado->Email }}</td>
-            <td>Editar |
+            <td>
+            <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">
+                Editar
+            </a>
+            
+            |
+
             <form action="{{ url('/empleado/' .$empleado->id ) }}" method="post">
             @csrf <!--Llave de seguridad-->
             {{ method_field('DELETE')}} <!--OBservar que arriba dice POST y según el listado de rutas, necesito DELETE para eliminar -->
