@@ -8,10 +8,11 @@
 <input type="text" name="Email" value="{{ isset($empleado) ? $empleado->Email : '' }}" id="Email">
 <br>
 <label for="Foto"> Foto </label>
-@if(isset($empleado) && $empleado->Foto) <!--Controlo que haya empleado y foto-->
+@if(isset($empleado->Foto)) <!--Controlo que haya empleado y foto-->
     <img src="{{ asset('storage').'/'.$empleado->Foto}}" width="100" alt="">
 @endif
 <input type="file" name="Foto" value="" id="Foto">
 <br>
 <input type="submit" value='Guardar datos'>
+<a href="{{ url('empleado/') }}"> Volver </a>
 <br>

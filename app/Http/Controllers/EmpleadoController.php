@@ -86,7 +86,19 @@ class EmpleadoController extends Controller
      */
     public function destroy($id)
     {
-        Empleado::destroy($id);
-        return redirect('empleado');
+        $empleado = Empleado::findOrFail($id);
+    
+        $rutaCompleta = storage_path('app/public/' . $empleado->Foto);
+    
+        if (file_exists($rutaCompleta)) {
+            unlink($rutaCompleta);  // Borra el archivo manualmente
+            //$path = str_replace('public/', '', $empleado->Foto); // Eliminar 'public/' de la ruta
+            //Storage::delete('public/' . $path);
+        }
+    
+        $empleado->delete();  // Borra el registro en la base de datos
+    
+        return redirect()->route('empleado.index')->with('mensaje', 'Empleado eliminado correctamente');
     }
+    
 }
