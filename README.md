@@ -36,19 +36,35 @@ Puedes ver las capturas de pantalla del proyecto en los siguientes estados:
 - **Login**
 ![Captura de pantalla de login](images/login.png)
 *Captura de pantalla de login*
+
 - **Creación de empleado**
 ![Captura de pantalla de la creación de empleado](images/creacion.png)
+*Captura de pantalla de la creación de empleado*
 ![Captura de pantalla del mensaje exitoso sobre la creación de empleado](images/mensaje-creacion.png)
+*Captura de pantalla del mensaje exitoso sobre la creación de empleado*
+
 - **Edición de empleado**
 ![Captura de pantalla de la edición de empleado, cambiando el email y la foto](images/edicion-empleado.png)
+*Captura de pantalla de la edición de empleado, cambiando el email y la foto*
 ![Captura de pantalla del mensaje exitoso sobre la edición de empleado](images/mensaje-edicion.png)
+*Captura de pantalla del mensaje exitoso sobre la edición de empleado*
+
 - **Lista de empleados**
 ![Captura de pantalla de la lista de empleados con paginación](images/paginacion-empleados.png)
-![Captura de pantalla de la lista de empleados con paginación](images/paginacion-empleados2.png)
+*Captura de pantalla de la lista de empleados con paginación*
+![Captura de pantalla de la lista de empleados en la segunda página](images/paginacion-empleados2.png)
+*Captura de pantalla de la lista de empleados en la segunda página*
+
 - **Eliminación de empleado**
 ![Captura de pantalla de la consulta para eliminar empleado](images/eliminacion.png)
+*Captura de pantalla de la consulta para eliminar empleado*
 ![Captura de pantalla del mensaje exitoso sobre la eliminación de empleado](images/mensaje-eliminacion.png)
+*Captura de pantalla del mensaje exitoso sobre la eliminación de empleado*
 ![Captura de pantalla de la lista de empleados actualizada después de la eliminación](images/lista-eliminacion.png)
+*Captura de pantalla de la lista de empleados actualizada después de la eliminación*
+
 - **Validación de datos**
 ![Captura de pantalla de la validación de datos durante la creación de empleado](images/validacion-creacion.png)
+*Captura de pantalla de la validación de datos durante la creación de empleado*
 ![Captura de pantalla de la validación de datos durante la edición de empleado](images/validacion-edicion.png)
+*Captura de pantalla de la validación de datos durante la edición de empleado*
