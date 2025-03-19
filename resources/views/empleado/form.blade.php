@@ -21,17 +21,17 @@
 
 <div class="form-group">
 <label for="Nombre"> Nombre </label>
-<input type="text" class="form-control" name="Nombre" value="{{ isset($empleado) ? $empleado->Nombre : '' }}" id="Nombre">
+<input type="text" class="form-control" name="Nombre" value="{{ isset($empleado) ? $empleado->Nombre : old('Nombre') }}" id="Nombre">
 </div>
 
 <div class="form-group">
 <label for="Apellido"> Apellido </label>
-<input type="text" class="form-control" name="Apellido" value="{{ isset($empleado) ? $empleado->Apellido : '' }}" id="Apellido">
+<input type="text" class="form-control" name="Apellido" value="{{ isset($empleado) ? $empleado->Apellido : old('Apellido') }}" id="Apellido">
 </div>
 
 <div class="form-group">
 <label for="Email"> Email </label>
-<input type="text" class="form-control" name="Email" value="{{ isset($empleado) ? $empleado->Email : '' }}" id="Email">
+<input type="text" class="form-control" name="Email" value="{{ isset($empleado) ? $empleado->Email : old('Email') }}" id="Email">
 </div>
 
 <div class="form-group">
