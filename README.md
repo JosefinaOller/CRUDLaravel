@@ -1,7 +1,3 @@
-Aquí tienes un README resumido para tu proyecto en GitHub:
-
----
-
 # CRUD de Empleados en Laravel
 
 Este proyecto simula un sistema de recursos humanos para gestionar una lista de empleados, permitiendo crear, editar y eliminar registros. Está desarrollado en Laravel y utiliza herramientas como XAMPP, Composer, Node.js y Bootstrap.
