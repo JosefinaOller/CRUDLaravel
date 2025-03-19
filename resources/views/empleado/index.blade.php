@@ -3,9 +3,16 @@
 <div class="container">
 
 @if(Session::has('mensaje'))
-{{ Session::get('mensaje') }}
-
+<div class="alert alert-success alert-dismissible" role="alert">
+    {{ Session::get('mensaje') }}
+    <button type="button" class="close" onclick="this.parentElement.style.display='none';" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 @endif
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <a href="{{ url('empleado/create') }}" class="btn btn-success"> Registrar nuevo empleado </a>
 <br>
@@ -52,5 +59,6 @@
         @endforeach
     </tbody>
 </table>
+{!! $empleados->links() !!}
 </div>
 @endsection

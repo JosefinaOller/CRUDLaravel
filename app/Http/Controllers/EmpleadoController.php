@@ -10,7 +10,7 @@ class EmpleadoController extends Controller
 {
     public function index()
     {
-        $datos['empleados']=Empleado::paginate(5); //muestra hasta 5 empleados
+        $datos['empleados']=Empleado::paginate(5); 
         return view ('empleado.index', $datos);
     }
 
@@ -59,40 +59,39 @@ class EmpleadoController extends Controller
 
     
     public function update(Request $request, $id)
-    {
-        $campos=[
-            'Nombre'=>'required|string|max:100',
-            'Apellido'=>'required|string|max:100',
-            'Email'=>'required|email'
-        ];
-        
-        $mensaje=['required'=>'El :attribute es requerido'];
+{
+    $campos = [
+        'Nombre' => 'required|string|max:100',
+        'Apellido' => 'required|string|max:100',
+        'Email' => 'required|email'
+    ];
 
-        if ($request->hasFile('Foto')) {
-            $campos=['Foto'=>'required|max:10000|mimes:jpeg,png,jpg'];
-            $mensaje=['Foto.required'=>'La foto es requerida'];
-        }
+    $mensaje = ['required' => 'El :attribute es requerido'];
 
-        $this->validate($request, $campos, $mensaje);
-        
-        $datosEmpleado = request()->except(['_token','_method']);
-
-        $empleado = Empleado::findOrFail($id);
-
-        if ($request->hasFile('Foto')) {
-            if ($empleado->Foto) {
-              Storage::delete('public/'.$empleado->Foto); //elimino la foto antigua  
-            }
-            $datosEmpleado['Foto']=$request->file('Foto')->store('uploads','public'); //guardo la nueva foto
-        }
-        
-        else {
-            $datosEmpleado['Foto'] = $empleado->Foto;
-        }
-        //$empleado=Empleado::findOrFail($id);
-         Empleado::where('id','=',$id)->update($datosEmpleado); //consulto si coinciden los id's.
-        return redirect()->route('empleado.index')->with('mensjae','Empleado actualizado correctamente');
+    // Si hay una nueva foto, agregar validación
+    if ($request->hasFile('Foto')) {
+        $campos['Foto'] = 'max:10000|mimes:jpeg,png,jpg';
+        $mensaje['Foto.mimes'] = 'El archivo debe ser una imagen en formato jpeg, png o jpg.';
     }
+
+    $this->validate($request, $campos, $mensaje);
+
+    $empleado = Empleado::findOrFail($id);
+    $datosEmpleado = $request->except(['_token', '_method']);
+
+    // Si hay una nueva foto, eliminar la anterior y guardar la nueva
+    if ($request->hasFile('Foto')) {
+        if ($empleado->Foto && Storage::exists('public/'.$empleado->Foto)) {
+            Storage::delete('public/'.$empleado->Foto);
+        }
+        $datosEmpleado['Foto'] = $request->file('Foto')->store('uploads', 'public');
+    }
+
+    $empleado->update($datosEmpleado);
+
+    return redirect('empleado')->with('mensaje', 'Empleado actualizado con éxito');
+}
+
 
     /**
      * Remove the specified resource from storage.

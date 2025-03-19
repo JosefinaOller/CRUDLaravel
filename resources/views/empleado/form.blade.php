@@ -35,11 +35,11 @@
 </div>
 
 <div class="form-group">
-<label for="Foto"></label>
-@if(isset($empleado->Foto)) <!--Controlo que haya empleado y foto-->
-    <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado->Foto}}" width="100" alt="">
-@endif
-<input type="file" class="form-control" name="Foto" value="" id="Foto">
+    <label for="Foto"></label>
+    @if(isset($empleado->Foto) && $empleado->Foto)
+        <img class="img-thumbnail img-fluid" src="{{ asset('storage/'.$empleado->Foto) }}" width="100" alt="">
+    @endif
+    <input type="file" class="form-control" name="Foto" id="Foto">
 </div>
 <br>
 
