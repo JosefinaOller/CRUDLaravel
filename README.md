@@ -32,7 +32,7 @@ Este proyecto simula un sistema de recursos humanos para gestionar una lista de 
 
 ## Capturas de pantalla
 
-Puedes ver las capturas de pantalla del proyecto en los siguientes estados:
+Podes ver las capturas de pantalla del proyecto en los siguientes estados:
 - **Login**
 
 ![Captura de pantalla de login](images/login.png)
