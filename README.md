@@ -35,6 +35,7 @@ Este proyecto simula un sistema de recursos humanos para gestionar una lista de 
 Puedes ver las capturas de pantalla del proyecto en los siguientes estados:
 - **Login**
 ![Captura de pantalla de login](images/login.png)
+*Captura de pantalla de login*
 - **Creación de empleado**
 ![Captura de pantalla de la creación de empleado](images/creacion.png)
 ![Captura de pantalla del mensaje exitoso sobre la creación de empleado](images/mensaje-creacion.png)
