@@ -1,4 +1,7 @@
-<h1>{{ $modo }} empleado</h1>
+@extends('layouts.app')
+@section('content')
+<div class="container">
+<h3>{{ $modo }} empleado</h3>
 <label for="Nombre"> Nombre </label>
 <input type="text" name="Nombre" value="{{ isset($empleado) ? $empleado->Nombre : '' }}" id="Nombre">
 <br>
@@ -17,3 +20,5 @@
 <input type="submit" value="{{ $modo }} datos">
 <a href="{{ url('empleado/') }}"> Volver </a>
 <br>
+</div>
+@endsection
