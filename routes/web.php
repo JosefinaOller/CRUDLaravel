@@ -14,3 +14,6 @@ Route::get('/', function () {
 Route::get('/empleado/create', [EmpleadoController::class, 'create']);
 */
 Route::resource('empleado',EmpleadoController::class); //genera recursos desde Controller de manera automatica. 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
