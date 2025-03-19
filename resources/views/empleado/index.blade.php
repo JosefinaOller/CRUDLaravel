@@ -7,7 +7,9 @@
 
 @endif
 
-<a href="{{ url('empleado/create') }}"> Registrar nuevo empleado </a>
+<a href="{{ url('empleado/create') }}" class="btn btn-success"> Registrar nuevo empleado </a>
+<br>
+<br>
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
@@ -25,23 +27,23 @@
             <td>{{ $empleado->id }}</td>
 
             <td>
-            <img src="{{ asset('storage').'/'.$empleado->Foto}}" width="100" alt="">
+            <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado->Foto}}" width="100" alt="">
             </td>
 
             <td>{{ $empleado->Nombre}}</td>
             <td>{{ $empleado->Apellido }}</td>
             <td>{{ $empleado->Email }}</td>
             <td>
-            <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}">
+            <a href="{{ url('/empleado/'.$empleado->id.'/edit') }}" class="btn btn-outline-warning" >
                 Editar
             </a>
             
             |
 
-            <form action="{{ url('/empleado/' .$empleado->id ) }}" method="post">
+            <form action="{{ url('/empleado/' .$empleado->id ) }}" class="d-inline"  method="post">
             @csrf <!--Llave de seguridad-->
             {{ method_field('DELETE')}} <!--OBservar que arriba dice POST y según el listado de rutas, necesito DELETE para eliminar -->
-            <input type="submit" onclick="return confirm('¿Querés borrar?')" value="Borrar">  
+            <input class="btn btn-outline-danger" type="submit" onclick="return confirm('¿Querés borrar?')" value="Borrar">  
             
             </form>
             
