@@ -1,6 +1,6 @@
 # 🚀 Sistema de Empleados en Laravel
 
-¡Bienvenido al **sistema de recursos humanos más eficiente y amigable** de todos los tiempos! 👩‍💼👨‍💼 Con este proyecto podrás crear, editar y eliminar empleados como todo un **pro**. Todo eso, mientras disfrutas de una interfaz limpia y moderna que no te hará perder tiempo. 😎
+¡Bienvenido al **sistema de recursos humanos más eficiente y amigable** de todos los tiempos! 👩‍💼👨‍💼 Con este proyecto podrás crear, editar y eliminar empleados como todo un **pro**. Todo eso, mientras disfrutas de una interfaz limpia, simple y moderna que no te hará perder tiempo. 😎
 
 ## 🛠️ Herramientas utilizadas
 
@@ -20,7 +20,7 @@
 ## 🗂️ Estructura del proyecto
 
 - **Vistas**: Están organizadas como un equipo de trabajo bien disciplinado. ¡Todo tiene su lugar! 🗂️
-- **Rutas**: Cada acción tiene su propia ruta, como un GPS para tu CRUD. 🛣️
+- **Rutas**: Cada acción tiene su propia ruta. 🛣️
 - **Formulario de entrada**: Los datos de los empleados entran y se validan con estilo. 🎯
 
 ## ⚡ Implementación
@@ -32,7 +32,12 @@
 
 ## 📸 Capturas de pantalla
 
-Aquí tenés una muestra visual de todo lo que este sistema puede hacer:
+Acá tenés una muestra visual de todo lo que este sistema puede hacer:
+
+- **Registro**
+
+![Captura de pantalla de register](images/register.png)  
+*Antes de gestionar empleados, tenés que demostrar que sos el/la que manda. ¡Regístrate!* 💼😎
 
 - **Login**
 
@@ -81,3 +86,62 @@ Aquí tenés una muestra visual de todo lo que este sistema puede hacer:
 
 ![Captura de pantalla de la validación de datos durante la edición de empleado](images/validacion-edicion.png)  
 *La validación nunca descansa, como un buen jefe.* 🧐
+
+## ⚙️ Cómo instalar y activar el sistema  
+
+Para que todo funcione como un reloj suizo, asegúrate de tener instalado lo siguiente:  
+
+- **XAMPP** 
+- **Composer**   
+- **Node.js**   
+- **Bootstrap**  
+- **Un navegador web**  
+
+### 🔥 Pasos para activar el sistema  
+
+1️⃣ **Clona el repositorio**  
+```bash
+git clone https://github.com/JosefinaOller/CRUDLaravel
+cd CRUDLaravel
+```
+
+2️⃣ **Instala las dependencias**  
+```bash
+composer install
+npm install
+```
+
+3️⃣ **Configura la base de datos en phpMyAdmin**  
+   - Abre XAMPP como Administrador y enciende **Apache** y **MySQL**.  
+   - Entra a **phpMyAdmin** (`http://localhost/phpmyadmin`).  
+   - Crea una nueva base de datos llamada **sistema**.  
+
+4️⃣ **Configura el archivo `.env`** 
+   - Asegúrate de completar los datos de la base de datos así:  
+
+   ```env
+   DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=sistema
+   DB_USERNAME=root
+   DB_PASSWORD=
+   ```
+
+5️⃣ **Migra la base de datos y genera las tablas**  
+```bash
+php artisan migrate
+```
+
+6️⃣ **Levanta el servidor y disfruta**  
+```bash
+php artisan serve
+```
+Luego, abre en tu navegador: [`http://localhost:8000`](http://localhost:8000)  
+
+7️⃣ **Regístrate como usuario**
+
+- Ingresa al sistema y regístrate con tus datos. 
+- Una vez registrado, ya podes acceder y comenzar a gestionar empleados. 
+
+¡Listo!
