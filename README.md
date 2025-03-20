@@ -133,7 +133,7 @@ npm install
 php artisan migrate
 ```
 
-6️⃣ **Levanta el servidor y disfruta**  
+6️⃣ **Levanta el servidor**  
 ```bash
 php artisan serve
 ```
